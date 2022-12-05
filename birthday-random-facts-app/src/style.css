@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root {
+    --clr-blue-primary: #2C306F;
+    --clr-blue-dark: #191c3e;
+    --clr-acqua-blr: hsl(185, 100%, 95%, .8);
+    --clr-white-primary: hsl(0, 0%, 100%);
+    --font-karla: 'Karla', sans-serif;
+
+
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-size: 100%;  
+}
+
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('./assets/5291450copy.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: var(--font-karla);
+    color: var(--clr-blue-primary)
+   
+}
+
+a,
+button {
+    cursor: pointer;
+    
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+main {
+    display: grid;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.box-container {
+    max-width: 900px;
+    background-color: var(--clr-acqua-blr);
+    border: 5px solid var(--clr-blue-primary);
+    padding: 2rem 3rem;
+    margin: 1rem;
+    
+}
+
+.title {
+    font-size: 2.8rem;
+    text-align: center;
+}
+
+.form {
+    padding: 0 1.5rem;
+}
+
+.form-text {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: .5rem;
+}
+
+.form-input {
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    border: 1px solid var(--clr-blue-primary);
+    width: 100%;
+    font-family: var(--font-karla);
+    
+}
+
+
+
+.container-birthday {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 2rem;
+    
+}
+
+.container-birthday--input {
+    width: 100%;
+}
+
+.form-text--input {
+    padding: 0;
+    margin: .5rem 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.form-button {
+    width: 100%;
+    background-color: var(--clr-blue-primary);
+    color: var(--clr-white-primary);
+    border: none;
+    border-radius: 10px;
+    padding: .8rem;
+    margin-top: 1.5rem;
+    font-family: var(--font-karla);
+    font-size: 1.2rem;
+    
+}
+
+.form-button:hover {
+    background-color: var(--clr-blue-dark);
+}
+
+.form-option {
+    background-color: var(--clr-white-primary);
+}
+
+
+.fact-text {
+    margin: 0 auto;
+    max-width: 44rem;
+    font-size: 1.4rem;
+    padding: 2rem 0;
+}
+
+.fact-paragraph {
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    main {
+        align-items: initial;
+        margin-top: 1rem;
+    }
+
+    
+    .fact-paragraph {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 620px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .box-container {
+        padding: 1rem;
+    }
+
+    .form-text {
+        font-size: 1.5rem;
+    }
+
+    .form-text--input {
+        font-size: 1.3rem;
+    }
+
+    .fact-text {
+        max-width: 38rem;
+        
+    }
+}
+
+@media (max-width: 500px) {
+    .container-birthday {
+        display: block;
+    }
+
+    .form-text--input {
+       margin: 1rem 0; 
+    }
+
+    .form,
+    .fact-paragraph {
+        padding: 0;
+    }
+}
