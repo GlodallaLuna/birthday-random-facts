@@ -11,7 +11,7 @@ function App() {
     event: ""
   })
 
-
+const [resetButton, setResetButton] = useState(false)
 
 
   function handleClick() {
@@ -19,17 +19,29 @@ function App() {
             .then(response => response.json())
             .then(data => {
               getRandomFact(data)
+              setResetButton(prevResetButton => !prevResetButton)
             })
           
   }
 
   function getRandomFact(factsArray) {
-    const randomNumber = Math.floor(Math.random() * factsArray.length)
-    const stringEvent = factsArray[randomNumber].event
-    setFactObj(prevFactObj => ({
-      ...prevFactObj,
-      event: stringEvent
-    }))
+    if(!resetButton){
+      const randomNumber = Math.floor(Math.random() * factsArray.length)
+      const stringEvent = factsArray[randomNumber].event
+      setFactObj(prevFactObj => ({
+        ...prevFactObj,
+        event: stringEvent
+      }))
+    } else {
+      setFactObj(prevFactObj => ({
+        ...prevFactObj,
+        firstName: "",
+        month: "",
+        day: "",
+        event: ""
+      }))
+    }
+    
     
   }
 
@@ -96,7 +108,7 @@ function App() {
                 </div>
             </div>
             <button className="form-button" onClick={handleClick}>
-                    Get My Random Fact
+                   {resetButton ? "New Fact" : "Get My Random Fact"}
             </button>
             
         </div>
