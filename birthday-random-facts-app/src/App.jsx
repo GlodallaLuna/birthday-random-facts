@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import './style.css'
-import Form from "./Form"
 import Fact from "./Fact"
 
 function App() {
@@ -12,16 +11,45 @@ function App() {
   })
 
 const [resetButton, setResetButton] = useState(false)
-
+const [errorMessage, setErrorMessage] = useState("")
 
   function handleClick() {
+   const error = errorCheck()
+   setErrorMessage(() => error)
+   if(!error) {
     fetch(`https://api.api-ninjas.com/v1/historicalevents?month=${factObj.month}&day=${factObj.day}`,{ headers: { 'X-Api-Key': 'QMr1gJuVcUTLnhez5mqnwA==p2xCPT1z7qNIwdvW'}})
-            .then(response => response.json())
-            .then(data => {
-              getRandomFact(data)
-              setResetButton(prevResetButton => !prevResetButton)
-            })
-          
+          .then(response => response.json())
+          .then(data => {
+            getRandomFact(data)
+            setResetButton(prevResetButton => !prevResetButton)
+          })  
+   }
+ 
+  }
+
+  function errorCheck() {
+    
+    if(factObj.firstName === "") {
+      return "Please write your first name"
+    } else if(factObj.month === "") {
+      return "Please select a month"
+    } else if(factObj.day === "") {
+      return "Please enter the day"
+    } else if(isNaN(factObj.day)) {
+      return "Please enter a valid number for the day"
+    } else if(Number(factObj.day) <= 0) {
+      return "Please enter a valid number for the day"
+    } else if(Number(factObj.day) % 1 != 0) {
+      return "Please enter a valid number for the day"
+    } 
+
+    const days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+		const upperLimit = days[Number(factObj.month) -1]
+    if (Number(factObj.day) > upperLimit) {
+     	return 'Please enter a valid day' 
+    }
+
+    return ""
   }
 
   function getRandomFact(factsArray) {
@@ -107,6 +135,7 @@ const [resetButton, setResetButton] = useState(false)
                     />
                 </div>
             </div>
+            <p className="error">{errorMessage}</p>
             <button className="form-button" onClick={handleClick}>
                    {resetButton ? "New Fact" : "Get My Random Fact"}
             </button>
