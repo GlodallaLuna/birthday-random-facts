@@ -30,23 +30,23 @@ const [errorMessage, setErrorMessage] = useState("")
   function errorCheck() {
     
     if(factObj.firstName === "") {
-      return "Please write your first name"
+      return "Please write your first name!"
     } else if(factObj.month === "") {
-      return "Please select a month"
+      return "Please select a month!"
     } else if(factObj.day === "") {
-      return "Please enter the day"
+      return "Please enter the day!"
     } else if(isNaN(factObj.day)) {
-      return "Please enter a valid number for the day"
+      return "Please enter a valid number for the day!"
     } else if(Number(factObj.day) <= 0) {
-      return "Please enter a valid number for the day"
+      return "Please enter a valid number for the day!"
     } else if(Number(factObj.day) % 1 != 0) {
-      return "Please enter a valid number for the day"
+      return "Please enter a valid number for the day!"
     } 
 
     const days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 		const upperLimit = days[Number(factObj.month) -1]
     if (Number(factObj.day) > upperLimit) {
-     	return 'Please enter a valid day' 
+     	return 'Please enter a valid day!' 
     }
 
     return ""
