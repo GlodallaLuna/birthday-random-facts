@@ -163,7 +163,7 @@ function App() {
             </div>
             <p className="error">{errorMessage}</p>
             <button className="form-button" onClick={handleClick}>
-                   {resetButton ? "New Fact" : "Get My Random Fact"}
+                   {resetButton ? "Reset" : "Get My Random Fact"}
             </button>
             
         </div>

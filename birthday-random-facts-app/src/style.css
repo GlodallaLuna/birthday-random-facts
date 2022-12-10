@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
 
 :root {
-    --clr-blue-primary: #2C306F;
+    --clr-blue-primary: hsl(236, 43%, 30%);
     --clr-blue-dark: #191c3e;
     --clr-acqua-blr: hsl(185, 100%, 95%, .8);
     --clr-white-primary: hsl(0, 0%, 100%);
-    --clr-spinner: #ffd556;
+    --clr-spinner: hsl(236, 47%, 43%);
     --font-karla: 'Karla', sans-serif;
 
 }
