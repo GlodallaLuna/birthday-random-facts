@@ -115,7 +115,7 @@ function App() {
     
     <div className="content">
       <main className="box-container">
-        <h1 className='title'>Discover what happened on the same day of your birthday</h1>
+        <h1 className='title'>Discover what happened on the same day as your birthday</h1>
         <div className='form'>
             <p className='form-text'>What's your name?</p>
             <input 
@@ -177,7 +177,7 @@ function App() {
        
         <p className="footer__para"><a className="footer__link" href="https://api-ninjas.com/api/historicalevents">Powered by Historical Events API</a></p>
         <p className="footer__para"><a className="footer__link" href="https://www.freepik.com/"> Background image designed by Freepick</a></p>
-        <p className="footer__para"><a className="footer__link" href="https://gloricodes.com/"> Designed and build by Gloria Mancini</a></p>
+        <p className="footer__para"><a className="footer__link" href="https://gloricodes.com/"> Designed and built by Gloria Mancini</a></p>
         </footer>
     </div>
 
